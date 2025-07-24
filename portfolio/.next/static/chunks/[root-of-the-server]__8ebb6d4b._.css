@@ -135,6 +135,8 @@
 
 @layer theme {
   :root, :host {
+    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
@@ -146,8 +148,8 @@
     --font-weight-semibold: 600;
     --default-transition-duration: .15s;
     --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-    --default-font-family: var(--font-geist-sans);
-    --default-mono-font-family: var(--font-geist-mono);
+    --default-font-family: var(--font-sans);
+    --default-mono-font-family: var(--font-mono);
   }
 }
 
@@ -621,10 +623,6 @@
     }
   }
 
-  .bg-foreground {
-    background-color: var(--foreground);
-  }
-
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
@@ -650,11 +648,11 @@
   }
 
   .font-mono {
-    font-family: var(--font-geist-mono);
+    font-family: var(--font-mono);
   }
 
   .font-sans {
-    font-family: var(--font-geist-sans);
+    font-family: var(--font-sans);
   }
 
   .text-sm {
@@ -680,10 +678,6 @@
   .tracking-\[-\.01em\] {
     --tw-tracking: -.01em;
     letter-spacing: -.01em;
-  }
-
-  .text-background {
-    color: var(--background);
   }
 
   .antialiased {
@@ -829,24 +823,6 @@
       }
     }
   }
-}
-
-:root {
-  --background: #fff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 @property --tw-border-style {
