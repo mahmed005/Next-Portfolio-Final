@@ -62,11 +62,11 @@ export default function Skills() {
             sx={{
               textTransform: "none",
               color: selectedSkill === button ? "white" : "primary.main",
-              borderColor: selectedSkill === button ? "grey.400" : "primary",
+              borderColor: "transparent",
               backgroundColor:
                 selectedSkill === button ? "primary.main" : "white",
             }}
-            variant="outlined"
+            variant="text"
             onClick={() => setSelectedSkill(button)}
           >
             {button}
@@ -95,7 +95,7 @@ export default function Skills() {
               spacing={3}
               sx={{
                 border: "1px solid",
-                borderColor: "grey.300",
+                borderColor: "text.secondary",
                 borderRadius: 1,
                 "&:hover": {
                   boxShadow: "0 2px 5px rgba(0, 0, 0, 0.2)",
@@ -103,6 +103,7 @@ export default function Skills() {
                 padding: 2,
                 width: "11rem",
                 height: "7rem",
+                backgroundColor: "background.paper",
               }}
             >
               <Image src={skill.icon} alt={skill.name} width={35} height={35} />

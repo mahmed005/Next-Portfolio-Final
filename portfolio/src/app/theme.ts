@@ -1,15 +1,31 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
 import inter from './fonts';
+import React, { createContext, useContext, useMemo, useState } from 'react';
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#2576D3',
-        },
-    },
-    typography: {
-        fontFamily: inter.style.fontFamily,
-    },
+export type ColorMode = 'light' | 'dark';
+
+export const ColorModeContext = createContext<{ toggleColorMode: () => void; mode: ColorMode }>({
+    toggleColorMode: () => { },
+    mode: 'light',
 });
 
-export default theme;
+export function useModeTheme(): [Theme, ColorMode, () => void] {
+    const [mode, setMode] = useState<ColorMode>('light');
+    const toggleColorMode = () => setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
+    const theme = useMemo(
+        () =>
+            createTheme({
+                palette: {
+                    mode,
+                    primary: {
+                        main: '#2576D3',
+                    },
+                },
+                typography: {
+                    fontFamily: inter.style.fontFamily,
+                },
+            }),
+        [mode]
+    );
+    return [theme, mode, toggleColorMode];
+}

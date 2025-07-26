@@ -7,6 +7,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import BlindsClosedIcon from "@mui/icons-material/BlindsClosed";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import DomainCard from "./DomainCard";
+import { useEffect, useRef } from "react";
 
 const domains = [
   {
@@ -27,6 +28,46 @@ const domains = [
 ];
 
 export default function About() {
+  const headingRef = useRef(null);
+  const leftSectionRef = useRef(null);
+  const RightSectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    const elements = [
+      headingRef.current,
+      leftSectionRef.current,
+      RightSectionRef.current,
+    ];
+
+    elements.forEach((el) => {
+      if (el) {
+        observer.observe(el);
+      }
+    });
+
+    return () => {
+      elements.forEach((el) => {
+        if (el) {
+          observer.unobserve(el);
+        }
+      });
+    };
+  }, []);
+
   return (
     <Stack
       id="about"
@@ -38,11 +79,33 @@ export default function About() {
       alignItems="center"
       paddingY={2}
     >
-      <Hero
-        color="white"
-        headingNormal="About Me"
-        subheading="Get to Know me"
-      />
+      <Stack
+        ref={headingRef}
+        className="opacity-0"
+        width={"100%"}
+        alignItems="center"
+        spacing={1}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          display={"flex"}
+          alignItems="center"
+          gap={"0.6rem"}
+          color={"white"}
+        >
+          About Me
+        </Typography>
+        <Typography
+          fontSize={"1.125rem"}
+          variant="body2"
+          color={"white"}
+          textAlign="center"
+          width={"75%"}
+        >
+          Get to know me
+        </Typography>
+      </Stack>
       <Stack
         direction={{ xs: "column", md: "row" }}
         alignItems={"center"}
@@ -51,7 +114,12 @@ export default function About() {
         width={{ xs: "95%", md: "90%" }}
         paddingX={2}
       >
-        <Stack width={{ xs: "100%", md: "48%" }} spacing={1}>
+        <Stack
+          ref={leftSectionRef}
+          className="opacity-0"
+          width={{ xs: "100%", md: "48%" }}
+          spacing={1}
+        >
           <Typography
             width={"100%"}
             textAlign={"center"}
@@ -84,7 +152,12 @@ export default function About() {
             discuss how I can contribute to your team!
           </Typography>
         </Stack>
-        <Stack width={{ xs: "100%", md: "48%" }} spacing={2}>
+        <Stack
+          ref={RightSectionRef}
+          className="opacity-0"
+          width={{ xs: "100%", md: "48%" }}
+          spacing={2}
+        >
           <Typography
             width={"100%"}
             textAlign={"center"}
