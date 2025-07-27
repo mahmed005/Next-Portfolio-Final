@@ -1,7 +1,6 @@
 "use client";
 
 import Stack from "@mui/material/Stack";
-import Hero from "./Hero";
 import { Typography } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import BlindsClosedIcon from "@mui/icons-material/BlindsClosed";
@@ -148,7 +147,7 @@ export default function About() {
             color="rgba(255,255,255,0.8)"
           >
             I am constantly exploring new technologies and best practices to
-            enhance my skills and deliver high-quality work. Let's connect and
+            enhance my skills and deliver high-quality work. Let&apos;s connect and
             discuss how I can contribute to your team!
           </Typography>
         </Stack>

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
-    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/PMLS/Desktop/Next-Portfolio-Final/portfolio/src/app/page.tsx"],"sourcesContent":["import { Stack } from \"@mui/material\";\nimport Intro from \"./components/Into\";\n\nexport default function Page() {\n  return (\n    <Stack width={\"100%\"}>\n      <Intro />\n      {/* Add other components or content here */}\n    </Stack>\n  );\n}\n"],"names":[],"mappings":";;;;AAAA;;;;;;;;;AAGe,SAAS;IACtB,qBACE,8OAAC,8LAAA,CAAA,QAAK;QAAC,OAAO;kBACZ,cAAA,8OAAC;;;;;;;;;;AAIP","debugId":null}}]
-}
