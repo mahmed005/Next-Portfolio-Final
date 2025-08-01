@@ -2,7 +2,7 @@
 
 import Stack from "@mui/material/Stack";
 import { Typography, Box } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 import CustomSwiper from "./CustomSwiper";
 

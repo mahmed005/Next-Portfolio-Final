@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, CssBaseline, useMediaQuery } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 
 import { ThemeProvider } from "@mui/material/styles";
 import Header from "./components/Header";
@@ -16,7 +16,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
-        <title>Ahmed's Portfolio</title>
+        <title>Ahmed&apos;s Portfolio</title>
         <link rel="icon" href="/pf.svg" />
       </head>
       <body className="min-h-screen max-w-screen overflow-y-auto overflow-x-hidden">

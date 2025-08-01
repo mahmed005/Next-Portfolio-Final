@@ -60,7 +60,7 @@ const MobileHeader = () => {
         fontWeight="bold"
         fontSize={{ xs: "1.1rem", sm: "1.25rem" }}
       >
-        Ahmed's Portfolio
+        Ahmed&apos;s Portfolio
       </Typography>
 
       <Box display="flex" alignItems="center" gap={1}>

@@ -1,6 +1,6 @@
 import { createTheme, Theme } from '@mui/material/styles';
 import inter from './fonts';
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 
 export type ColorMode = 'light' | 'dark';
 

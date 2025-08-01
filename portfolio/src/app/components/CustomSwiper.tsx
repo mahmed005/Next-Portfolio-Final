@@ -28,7 +28,7 @@ import bs6 from "../../assets/bs6.png";
 import bs7 from "../../assets/bs7.png";
 import bs8 from "../../assets/bs8.png";
 import bs9 from "../../assets/bs9.png";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
@@ -68,7 +68,9 @@ export default function CustomSwiper() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [selectedProjectImages, setSelectedProjectImages] = useState([]);
+  const [selectedProjectImages, setSelectedProjectImages] = useState<
+    StaticImageData[]
+  >([]);
 
   let autoColumns = "calc(33.333% - 16px)";
   if (mdBreakpoint) autoColumns = "calc(50% - 16px)";
@@ -78,7 +80,7 @@ export default function CustomSwiper() {
   if (mdBreakpoint) endIndex = startIndex + 2;
   if (xsBreakpoint) endIndex = startIndex + 1;
 
-  const openGallery = (images: any, startIndex = 0) => {
+  const openGallery = (images: StaticImageData[], startIndex = 0) => {
     setSelectedProjectImages(images);
     setCurrentImageIndex(startIndex);
     setIsGalleryOpen(true);
@@ -105,7 +107,7 @@ export default function CustomSwiper() {
   };
 
   useEffect(() => {
-    const handleKeyPress = (e: any) => {
+    const handleKeyPress = (e: KeyboardEvent) => {
       if (!isGalleryOpen) return;
 
       switch (e.key) {

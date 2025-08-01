@@ -107,7 +107,7 @@ const Header = () => {
             fontSize={{ xs: "1rem", lg: "1.25rem" }}
             color="primary.main"
           >
-            Ahmed's
+            Ahmed&apos;s
           </Typography>
           Portfolio
         </Typography>
