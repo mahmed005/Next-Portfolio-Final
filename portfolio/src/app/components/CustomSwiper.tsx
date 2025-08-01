@@ -58,22 +58,6 @@ const allProjects = [
     technologies: ["React", "Node.js", "MongoDB", "Firebase"],
     githubLink: "https://github.com/Ch-Daniyal-Akhtar/mern-book-app",
   },
-  {
-    title: "TaleShop - Online Bookstore",
-    description:
-      "A full-featured online bookstore with user and admin dashboards, cart system, and secure authentication.",
-    pictures: [bs1, bs2, bs3, bs4, bs5, bs6, bs7, bs8, bs9, bs10, bs11, bs12],
-    technologies: ["React", "Node.js", "MongoDB", "Firebase"],
-    githubLink: "https://github.com/Ch-Daniyal-Akhtar/mern-book-app",
-  },
-  {
-    title: "TaleShop - Online Bookstore",
-    description:
-      "A full-featured online bookstore with user and admin dashboards, cart system, and secure authentication.",
-    pictures: [bs1, bs2, bs3, bs4, bs5, bs6, bs7, bs8, bs9, bs10, bs11, bs12],
-    technologies: ["React", "Node.js", "MongoDB", "Firebase"],
-    githubLink: "https://github.com/Ch-Daniyal-Akhtar/mern-book-app",
-  },
 ];
 
 export default function CustomSwiper() {
