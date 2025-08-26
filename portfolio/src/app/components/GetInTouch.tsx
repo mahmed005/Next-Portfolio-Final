@@ -44,7 +44,10 @@ export default function GetInTouch() {
         alignItems={"flex-start"}
         justifyContent={"center"}
         direction={"row"}
-        gap={10}
+        gap={{
+          xs: 5,
+          md: 10,
+        }}
       >
         <div className="space-y-6">
           <h3 className="text-2xl font-bold text-foreground mb-8">
@@ -99,7 +102,7 @@ export default function GetInTouch() {
         </div>
       </Stack>
       <footer className="bg-background/50">
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto md:px-6 py-8  xs:px-3">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-sm text-muted-foreground">
               &copy; {2025} Muhammad Ahmed. All rights reserved.

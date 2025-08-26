@@ -249,12 +249,15 @@ export default function CustomSwiper() {
       <Stack
         sx={{
           width: "100%",
-          px: 4,
+          px: 0,
         }}
         direction={"row"}
         alignItems={"center"}
         justifyContent={"space-between"}
-        gap={3}
+        gap={{
+          xs: 1,
+          md: 3,
+        }}
       >
         <IconButton
           onClick={handleLeftButtonClick}
@@ -272,7 +275,7 @@ export default function CustomSwiper() {
         <Stack
           width={{
             xs: "95%",
-            md: "80%",
+            md: "85%",
           }}
           overflow={"hidden"}
         >
