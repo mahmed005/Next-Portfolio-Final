@@ -274,7 +274,7 @@ export default function CustomSwiper() {
         </IconButton>
         <Stack
           width={{
-            xs: "95%",
+            xs: "98%",
             md: "85%",
           }}
           overflow={"hidden"}
